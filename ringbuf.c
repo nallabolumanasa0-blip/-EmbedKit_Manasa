@@ -28,14 +28,9 @@ int write(queue_t *q, uint8_t data)
 {
     if(isfull(q))
         return FAILURE;
-
     q->buffer[q->head] = data;
-
-   
     q->head = (q->head + 1) & (BUFFER_SIZE - 1);
-
     q->count++;
-
     return SUCCESS;
 }
 
@@ -43,13 +38,9 @@ int read(queue_t *q, uint8_t *data)
 {
     if(isempty(q))
         return FAILURE;
-
     *data = q->buffer[q->tail];
-
     q->tail = (q->tail + 1) & (BUFFER_SIZE - 1);
-
     q->count--;
-
     return SUCCESS;
 }
 
