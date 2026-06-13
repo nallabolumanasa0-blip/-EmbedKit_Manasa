@@ -11,7 +11,7 @@ int main()
 
     init(&q);
 
-    // Write 0x41 to 0x48 
+ 
     for(i = 0; i < BUFFER_SIZE; i++)
     {
         data = 0x41 + i;
@@ -30,13 +30,11 @@ int main()
         }
     }
 
-    // Attempt one more write 
     ret = write(&q, 0x99);
 
     if(ret == FAILURE)
         printf("[WRITE] 0x99 -> FAIL (buffer full)\n");
 
-    // Read 3 bytes 
     for(i = 0; i < 3; i++)
     {
         ret = read(&q, &data);
@@ -48,7 +46,6 @@ int main()
         }
     }
 
-    // Write 0x49, 0x4A, 0x4B 
     for(data = 0x49; data <= 0x4B; data++)
     {
         ret = write(&q, data);
@@ -60,7 +57,6 @@ int main()
         }
     }
 
-    // Read all remaining bytes 
     while(!isempty(&q))
     {
         ret = read(&q, &data);
@@ -72,7 +68,6 @@ int main()
         }
     }
 
-    // Attempt one more read 
     ret = read(&q, &data);
 
     if(ret == FAILURE)
