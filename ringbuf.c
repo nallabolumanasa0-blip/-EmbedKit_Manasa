@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ringbuffer.h"
+#include "ringbuf.h"
 
 void init(queue_t *q)
 {
