@@ -1,4 +1,3 @@
-```c
 #include <stdio.h>
 #include "ringbuffer.h"
 
@@ -58,4 +57,3 @@ uint8_t get_count(queue_t *q)
 {
     return q->count;
 }
-```
