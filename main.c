@@ -8,16 +8,11 @@ int main()
     uint8_t data;
     int ret;
     int i;
-
     init(&q);
-
- 
     for(i = 0; i < BUFFER_SIZE; i++)
     {
         data = 0x41 + i;
-
         ret = write(&q, data);
-
         if(ret == SUCCESS)
         {
             printf("[WRITE] 0x%02X -> OK (count=%d)",
@@ -29,7 +24,7 @@ int main()
             printf("\n");
         }
     }
-
+    
     ret = write(&q, 0x99);
 
     if(ret == FAILURE)
