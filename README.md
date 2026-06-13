@@ -3,7 +3,7 @@ Name: Nallabolu Manasa
 Project: Ring Buffer Implementation in Embedded C
 
 Build Instructions:
-gcc -Wall -std=c99 ringbuf.c -o ringbuf
+gcc -Wall -std=c99 main.c ringbuf.c -o ringbuf
 ./ringbuf
 
 Description:
